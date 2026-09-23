@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -133,6 +133,7 @@ async function main() {
   const converted = convertToEverforest(content, { cdn, name });
 
   const resolvedOut = resolve(process.cwd(), outPath);
+  mkdirSync(dirname(resolvedOut), { recursive: true });
   writeFileSync(resolvedOut, converted, 'utf8');
   console.log(`Successfully generated: ${resolvedOut}`);
 }

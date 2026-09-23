@@ -1,0 +1,385 @@
+/* ==UserStyle==
+@name Shinigami Eyes Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/shinigami-eyes
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/shinigami-eyes
+@version 2026.08.16
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/shinigami-eyes/catppuccin.user.less
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Ashinigami-eyes
+@description Comfortable natural green-based theme
+@author Everforest Port
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Contrast" ["light_medium:Medium*", "light_hard:Hard", "light_soft:Soft"]
+@var select darkFlavor "Dark Contrast" ["dark_medium:Medium*", "dark_hard:Hard", "dark_soft:Soft"]
+@var select accentColor "Accent" ["green:Green*", "aqua:Aqua", "blue:Blue", "purple:Purple", "yellow:Yellow", "orange:Orange", "red:Red"]
+==/UserStyle== */
+
+/* === Everforest Library === */
+#lib {
+  .palette() {
+    @everforest: {
+      @dark_hard: {
+        @crust: #1e2326;
+        @mantle: #272e33;
+        @base: #272e33;
+        @surface0: #2e383c;
+        @surface1: #374145;
+        @surface2: #414b50;
+        @overlay0: #495156;
+        @overlay1: #7a8478;
+        @overlay2: #859289;
+        @subtext0: #9da9a0;
+        @subtext1: #9da9a0;
+        @text: #d3c6aa;
+        @green: #a7c080;
+        @red: #e67e80;
+        @orange: #e69875;
+        @yellow: #dbbc7f;
+        @aqua: #83c092;
+        @blue: #7fbbb3;
+        @purple: #d699b6;
+      };
+      @dark_medium: {
+        @crust: #232a2e;
+        @mantle: #232a2e;
+        @base: #2d353b;
+        @surface0: #343f44;
+        @surface1: #3d484d;
+        @surface2: #475258;
+        @overlay0: #4f585e;
+        @overlay1: #7a8478;
+        @overlay2: #859289;
+        @subtext0: #9da9a0;
+        @subtext1: #9da9a0;
+        @text: #d3c6aa;
+        @green: #a7c080;
+        @red: #e67e80;
+        @orange: #e69875;
+        @yellow: #dbbc7f;
+        @aqua: #83c092;
+        @blue: #7fbbb3;
+        @purple: #d699b6;
+      };
+      @dark_soft: {
+        @crust: #293136;
+        @mantle: #293136;
+        @base: #333c43;
+        @surface0: #3a464c;
+        @surface1: #434f55;
+        @surface2: #4d5960;
+        @overlay0: #555f66;
+        @overlay1: #7a8478;
+        @overlay2: #859289;
+        @subtext0: #9da9a0;
+        @subtext1: #9da9a0;
+        @text: #d3c6aa;
+        @green: #a7c080;
+        @red: #e67e80;
+        @orange: #e69875;
+        @yellow: #dbbc7f;
+        @aqua: #83c092;
+        @blue: #7fbbb3;
+        @purple: #d699b6;
+      };
+      @light_hard: {
+        @crust: #f2efdf;
+        @mantle: #f2efdf;
+        @base: #fffbef;
+        @surface0: #f8f5e4;
+        @surface1: #f2efdf;
+        @surface2: #edeada;
+        @overlay0: #e8e5d5;
+        @overlay1: #a6b0a0;
+        @overlay2: #939f91;
+        @subtext0: #829181;
+        @subtext1: #829181;
+        @text: #5c6a72;
+        @green: #8da101;
+        @red: #f85552;
+        @orange: #f57d26;
+        @yellow: #dfa000;
+        @aqua: #35a77c;
+        @blue: #3a94c5;
+        @purple: #df69ba;
+      };
+      @light_medium: {
+        @crust: #efebd4;
+        @mantle: #efebd4;
+        @base: #fdf6e3;
+        @surface0: #f4f0d9;
+        @surface1: #efebd4;
+        @surface2: #e6e2cc;
+        @overlay0: #e0dcc7;
+        @overlay1: #a6b0a0;
+        @overlay2: #939f91;
+        @subtext0: #829181;
+        @subtext1: #829181;
+        @text: #5c6a72;
+        @green: #8da101;
+        @red: #f85552;
+        @orange: #f57d26;
+        @yellow: #dfa000;
+        @aqua: #35a77c;
+        @blue: #3a94c5;
+        @purple: #df69ba;
+      };
+      @light_soft: {
+        @crust: #e5dfc5;
+        @mantle: #e5dfc5;
+        @base: #f3ead3;
+        @surface0: #eae4ca;
+        @surface1: #e5dfc5;
+        @surface2: #ddd8be;
+        @overlay0: #d8d3ba;
+        @overlay1: #a6b0a0;
+        @overlay2: #939f91;
+        @subtext0: #829181;
+        @subtext1: #829181;
+        @text: #5c6a72;
+        @green: #8da101;
+        @red: #f85552;
+        @orange: #f57d26;
+        @yellow: #dfa000;
+        @aqua: #35a77c;
+        @blue: #3a94c5;
+        @purple: #df69ba;
+      };
+    };
+
+    @base: @everforest[@@flavor][@base];
+    @mantle: @everforest[@@flavor][@mantle];
+    @crust: @everforest[@@flavor][@crust];
+    @surface0: @everforest[@@flavor][@surface0];
+    @surface1: @everforest[@@flavor][@surface1];
+    @surface2: @everforest[@@flavor][@surface2];
+    @overlay0: @everforest[@@flavor][@overlay0];
+    @overlay1: @everforest[@@flavor][@overlay1];
+    @overlay2: @everforest[@@flavor][@overlay2];
+    @subtext0: @everforest[@@flavor][@subtext0];
+    @subtext1: @everforest[@@flavor][@subtext1];
+    @text: @everforest[@@flavor][@text];
+    @green: @everforest[@@flavor][@green];
+    @red: @everforest[@@flavor][@red];
+    @orange: @everforest[@@flavor][@orange];
+    @yellow: @everforest[@@flavor][@yellow];
+    @aqua: @everforest[@@flavor][@aqua];
+    @blue: @everforest[@@flavor][@blue];
+    @purple: @everforest[@@flavor][@purple];
+
+    @fg: @text;
+    @bg0: @base;
+    @bg_dim: @crust;
+    @bg1: @surface0;
+    @bg2: @surface1;
+    @bg3: @surface2;
+    @bg4: @overlay0;
+    @grey0: @overlay1;
+    @grey1: @overlay2;
+    @grey2: @subtext0;
+
+    @peach: @everforest[@@flavor][@orange];
+    @teal: @everforest[@@flavor][@aqua];
+    @mauve: @everforest[@@flavor][@purple];
+    @pink: @everforest[@@flavor][@purple];
+    @lavender: @everforest[@@flavor][@purple];
+    @sapphire: @everforest[@@flavor][@blue];
+    @sky: @everforest[@@flavor][@aqua];
+    @maroon: @everforest[@@flavor][@red];
+    @flamingo: @everforest[@@flavor][@orange];
+    @rosewater: @everforest[@@flavor][@orange];
+    @accent: @everforest[@@flavor][@@accentColor];
+    @isLight: if(@flavor = light_hard, true, if(@flavor = light_medium, true, if(@flavor = light_soft, true, false)));
+
+    @rosewater-filter: none;
+    @flamingo-filter: none;
+    @pink-filter: none;
+    @mauve-filter: none;
+    @red-filter: none;
+    @maroon-filter: none;
+    @peach-filter: none;
+    @yellow-filter: none;
+    @green-filter: none;
+    @teal-filter: none;
+    @sky-filter: none;
+    @sapphire-filter: none;
+    @blue-filter: none;
+    @lavender-filter: none;
+    @text-filter: none;
+    @subtext1-filter: none;
+    @subtext0-filter: none;
+    @overlay2-filter: none;
+    @overlay1-filter: none;
+    @overlay0-filter: none;
+    @surface2-filter: none;
+    @surface1-filter: none;
+    @surface0-filter: none;
+    @base-filter: none;
+    @mantle-filter: none;
+    @crust-filter: none;
+    @accent-filter: none;
+  }
+
+  .defaults() {
+    color-scheme: if(@isLight = true, light, dark);
+
+    ::selection {
+      background-color: fade(@accent, 30%);
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+  }
+
+  .css-variables() {
+    --ctp-rosewater: @rosewater;
+    --ctp-flamingo: @flamingo;
+    --ctp-pink: @pink;
+    --ctp-mauve: @mauve;
+    --ctp-red: @red;
+    --ctp-maroon: @maroon;
+    --ctp-peach: @peach;
+    --ctp-yellow: @yellow;
+    --ctp-green: @green;
+    --ctp-teal: @teal;
+    --ctp-sky: @sky;
+    --ctp-sapphire: @sapphire;
+    --ctp-blue: @blue;
+    --ctp-lavender: @lavender;
+    --ctp-text: @text;
+    --ctp-subtext1: @subtext1;
+    --ctp-subtext0: @subtext0;
+    --ctp-overlay2: @overlay2;
+    --ctp-overlay1: @overlay1;
+    --ctp-overlay0: @overlay0;
+    --ctp-surface2: @surface2;
+    --ctp-surface1: @surface1;
+    --ctp-surface0: @surface0;
+    --ctp-base: @base;
+    --ctp-mantle: @mantle;
+    --ctp-crust: @crust;
+    --ctp-accent: @accent;
+  }
+
+  .rgbify(@color) {
+    @rgb: red(@color), green(@color), blue(@color);
+  }
+
+  .hslify(@color) {
+    @raw: e(
+      %("%s, %s%, %s%", hue(@color), saturation(@color), lightness(@color))
+    );
+  }
+}
+/* ============================ */
+
+/*
+These are the domains for the sites that Shinigami Eyes works with.
+The list can be found at https://github.com/shinigami-eyes/shinigami-eyes/blob/b66e9ad41fa4daef31886b139d8af6f852efcaaa/extension/manifest.json#L15-L96.
+*/
+@-moz-document domain("facebook.com"),
+  domain("youtube.com"),
+  domain("reddit.com"),
+  domain("twitter.com"),
+  domain("x.com"),
+  domain("medium.com"),
+  domain("disqus.com"),
+  domain("tumblr.com"),
+  domain("wikipedia.org"),
+  domain("rationalwiki.org"),
+  domain("cohost.org"),
+  domain("bsky.app"),
+  domain("anarchism.space"),
+  domain("aus.social"),
+  domain("c.im"),
+  domain("chaos.social"),
+  domain("eightpoint.app"),
+  domain("eldritch.cafe"),
+  domain("fosstodon.org"),
+  domain("hachyderm.io"),
+  domain("infosec.exchange"),
+  domain("kolektiva.social"),
+  domain("mas.to"),
+  domain("masto.ai"),
+  domain("chaosfem.tw"),
+  domain("mastodon.art"),
+  domain("mastodon.cloud"),
+  domain("mastodon.green"),
+  domain("mastodon.ie"),
+  domain("mastodon.nz"),
+  domain("mastodon.online"),
+  domain("mastodon.scot"),
+  domain("mastodon.social"),
+  domain("mastodon.world"),
+  domain("mastodon.xyz"),
+  domain("mastodonapp.uk"),
+  domain("meow.social"),
+  domain("mstdn.ca"),
+  domain("mstdn.jp"),
+  domain("mstdn.social"),
+  domain("octodon.social"),
+  domain("ohai.social"),
+  domain("pixelfed.social"),
+  domain("queer.party"),
+  domain("sfba.social"),
+  domain("social.transsafety.network"),
+  domain("tech.lgbt"),
+  domain("techhub.social"),
+  domain("toot.cat"),
+  domain("toot.community"),
+  domain("toot.wales"),
+  domain("vulpine.club"),
+  domain("wandering.shop"),
+  domain("lgbtqia.space"),
+  domain("threads.net"),
+  domain("duckduckgo.com"),
+  domain("bing.com"),
+  domain("google.ar"),
+  domain("google.at"),
+  domain("google.be"),
+  domain("google.ca"),
+  domain("google.ch"),
+  domain("google.co.uk"),
+  domain("google.com"),
+  domain("google.de"),
+  domain("google.dk"),
+  domain("google.es"),
+  domain("google.fi"),
+  domain("google.fr"),
+  domain("google.is"),
+  domain("google.it"),
+  domain("google.no"),
+  domain("google.pt"),
+  domain("google.se") {
+  :root {
+    @media (prefers-color-scheme: light) {
+      #everforest(@lightFlavor);
+    }
+    @media (prefers-color-scheme: dark) {
+      #everforest(@darkFlavor);
+    }
+  }
+
+  #everforest(@flavor) {
+    #lib.palette();
+
+    body {
+      --ShinigamiEyesTFriendly: @green !important;
+      --ShinigamiEyesTransphobic: @red !important;
+    }
+
+    .shinigami-eyes-theme-purple-yellow {
+      --ShinigamiEyesTFriendly: @mauve !important;
+      --ShinigamiEyesTransphobic: @yellow !important;
+    }
+
+    .shinigami-eyes-theme-cyan-orange {
+      --ShinigamiEyesTFriendly: @sapphire !important;
+      --ShinigamiEyesTransphobic: @peach !important;
+    }
+  }
+}
