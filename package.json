@@ -1,0 +1,19 @@
+{
+  "name": "everforest-userstyles",
+  "version": "1.0.0",
+  "description": "Everforest ports and automated conversion toolkit for Catppuccin userstyles",
+  "type": "module",
+  "main": "lib/everforest.less",
+  "scripts": {
+    "convert": "node scripts/converter.mjs"
+  },
+  "keywords": [
+    "everforest",
+    "userstyle",
+    "stylus",
+    "less",
+    "theme"
+  ],
+  "author": "groundfox",
+  "license": "MIT"
+}

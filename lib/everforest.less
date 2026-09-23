@@ -1,0 +1,191 @@
+#lib {
+  .palette() {
+    @everforest: {
+      @dark_hard: {
+        @crust: #1e2326;
+        @mantle: #272e33;
+        @base: #272e33;
+        @surface0: #2e383c;
+        @surface1: #374145;
+        @surface2: #414b50;
+        @overlay0: #495156;
+        @overlay1: #7a8478;
+        @overlay2: #859289;
+        @subtext0: #9da9a0;
+        @subtext1: #9da9a0;
+        @text: #d3c6aa;
+        @green: #a7c080;
+        @red: #e67e80;
+        @orange: #e69875;
+        @yellow: #dbbc7f;
+        @aqua: #83c092;
+        @blue: #7fbbb3;
+        @purple: #d699b6;
+      };
+      @dark_medium: {
+        @crust: #232a2e;
+        @mantle: #232a2e;
+        @base: #2d353b;
+        @surface0: #343f44;
+        @surface1: #3d484d;
+        @surface2: #475258;
+        @overlay0: #4f585e;
+        @overlay1: #7a8478;
+        @overlay2: #859289;
+        @subtext0: #9da9a0;
+        @subtext1: #9da9a0;
+        @text: #d3c6aa;
+        @green: #a7c080;
+        @red: #e67e80;
+        @orange: #e69875;
+        @yellow: #dbbc7f;
+        @aqua: #83c092;
+        @blue: #7fbbb3;
+        @purple: #d699b6;
+      };
+      @dark_soft: {
+        @crust: #293136;
+        @mantle: #293136;
+        @base: #333c43;
+        @surface0: #3a464c;
+        @surface1: #434f55;
+        @surface2: #4d5960;
+        @overlay0: #555f66;
+        @overlay1: #7a8478;
+        @overlay2: #859289;
+        @subtext0: #9da9a0;
+        @subtext1: #9da9a0;
+        @text: #d3c6aa;
+        @green: #a7c080;
+        @red: #e67e80;
+        @orange: #e69875;
+        @yellow: #dbbc7f;
+        @aqua: #83c092;
+        @blue: #7fbbb3;
+        @purple: #d699b6;
+      };
+      @light_hard: {
+        @crust: #f2efdf;
+        @mantle: #f2efdf;
+        @base: #fffbef;
+        @surface0: #f8f5e4;
+        @surface1: #f2efdf;
+        @surface2: #edeada;
+        @overlay0: #e8e5d5;
+        @overlay1: #a6b0a0;
+        @overlay2: #939f91;
+        @subtext0: #829181;
+        @subtext1: #829181;
+        @text: #5c6a72;
+        @green: #8da101;
+        @red: #f85552;
+        @orange: #f57d26;
+        @yellow: #dfa000;
+        @aqua: #35a77c;
+        @blue: #3a94c5;
+        @purple: #df69ba;
+      };
+      @light_medium: {
+        @crust: #efebd4;
+        @mantle: #efebd4;
+        @base: #fdf6e3;
+        @surface0: #f4f0d9;
+        @surface1: #efebd4;
+        @surface2: #e6e2cc;
+        @overlay0: #e0dcc7;
+        @overlay1: #a6b0a0;
+        @overlay2: #939f91;
+        @subtext0: #829181;
+        @subtext1: #829181;
+        @text: #5c6a72;
+        @green: #8da101;
+        @red: #f85552;
+        @orange: #f57d26;
+        @yellow: #dfa000;
+        @aqua: #35a77c;
+        @blue: #3a94c5;
+        @purple: #df69ba;
+      };
+      @light_soft: {
+        @crust: #e5dfc5;
+        @mantle: #e5dfc5;
+        @base: #f3ead3;
+        @surface0: #eae4ca;
+        @surface1: #e5dfc5;
+        @surface2: #ddd8be;
+        @overlay0: #d8d3ba;
+        @overlay1: #a6b0a0;
+        @overlay2: #939f91;
+        @subtext0: #829181;
+        @subtext1: #829181;
+        @text: #5c6a72;
+        @green: #8da101;
+        @red: #f85552;
+        @orange: #f57d26;
+        @yellow: #dfa000;
+        @aqua: #35a77c;
+        @blue: #3a94c5;
+        @purple: #df69ba;
+      };
+    };
+
+    @base: @everforest[@@flavor][@base];
+    @mantle: @everforest[@@flavor][@mantle];
+    @crust: @everforest[@@flavor][@crust];
+    @surface0: @everforest[@@flavor][@surface0];
+    @surface1: @everforest[@@flavor][@surface1];
+    @surface2: @everforest[@@flavor][@surface2];
+    @overlay0: @everforest[@@flavor][@overlay0];
+    @overlay1: @everforest[@@flavor][@overlay1];
+    @overlay2: @everforest[@@flavor][@overlay2];
+    @subtext0: @everforest[@@flavor][@subtext0];
+    @subtext1: @everforest[@@flavor][@subtext1];
+    @text: @everforest[@@flavor][@text];
+    @green: @everforest[@@flavor][@green];
+    @red: @everforest[@@flavor][@red];
+    @orange: @everforest[@@flavor][@orange];
+    @yellow: @everforest[@@flavor][@yellow];
+    @aqua: @everforest[@@flavor][@aqua];
+    @blue: @everforest[@@flavor][@blue];
+    @purple: @everforest[@@flavor][@purple];
+
+    @fg: @text;
+    @bg0: @base;
+    @bg_dim: @crust;
+    @bg1: @surface0;
+    @bg2: @surface1;
+    @bg3: @surface2;
+    @bg4: @overlay0;
+    @grey0: @overlay1;
+    @grey1: @overlay2;
+    @grey2: @subtext0;
+
+    @peach: @everforest[@@flavor][@orange];
+    @teal: @everforest[@@flavor][@aqua];
+    @mauve: @everforest[@@flavor][@purple];
+    @pink: @everforest[@@flavor][@purple];
+    @lavender: @everforest[@@flavor][@purple];
+    @sapphire: @everforest[@@flavor][@blue];
+    @sky: @everforest[@@flavor][@aqua];
+    @maroon: @everforest[@@flavor][@red];
+    @flamingo: @everforest[@@flavor][@orange];
+    @rosewater: @everforest[@@flavor][@orange];
+    @accent: @everforest[@@flavor][@@accentColor];
+    @isLight: if(@flavor = light_hard, true, if(@flavor = light_medium, true, if(@flavor = light_soft, true, false)));
+  }
+
+  .defaults() {
+    color-scheme: if(@isLight = true, light, dark);
+
+    ::selection {
+      background-color: fade(@accent, 30%);
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+  }
+}
