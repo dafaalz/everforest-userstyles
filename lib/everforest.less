@@ -172,6 +172,34 @@
     @rosewater: @everforest[@@flavor][@orange];
     @accent: @everforest[@@flavor][@@accentColor];
     @isLight: if(@flavor = light_hard, true, if(@flavor = light_medium, true, if(@flavor = light_soft, true, false)));
+
+    @rosewater-filter: none;
+    @flamingo-filter: none;
+    @pink-filter: none;
+    @mauve-filter: none;
+    @red-filter: none;
+    @maroon-filter: none;
+    @peach-filter: none;
+    @yellow-filter: none;
+    @green-filter: none;
+    @teal-filter: none;
+    @sky-filter: none;
+    @sapphire-filter: none;
+    @blue-filter: none;
+    @lavender-filter: none;
+    @text-filter: none;
+    @subtext1-filter: none;
+    @subtext0-filter: none;
+    @overlay2-filter: none;
+    @overlay1-filter: none;
+    @overlay0-filter: none;
+    @surface2-filter: none;
+    @surface1-filter: none;
+    @surface0-filter: none;
+    @base-filter: none;
+    @mantle-filter: none;
+    @crust-filter: none;
+    @accent-filter: none;
   }
 
   .defaults() {
@@ -187,5 +215,45 @@
         color: @subtext0 !important;
       }
     }
+  }
+
+  .css-variables() {
+    --ctp-rosewater: @rosewater;
+    --ctp-flamingo: @flamingo;
+    --ctp-pink: @pink;
+    --ctp-mauve: @mauve;
+    --ctp-red: @red;
+    --ctp-maroon: @maroon;
+    --ctp-peach: @peach;
+    --ctp-yellow: @yellow;
+    --ctp-green: @green;
+    --ctp-teal: @teal;
+    --ctp-sky: @sky;
+    --ctp-sapphire: @sapphire;
+    --ctp-blue: @blue;
+    --ctp-lavender: @lavender;
+    --ctp-text: @text;
+    --ctp-subtext1: @subtext1;
+    --ctp-subtext0: @subtext0;
+    --ctp-overlay2: @overlay2;
+    --ctp-overlay1: @overlay1;
+    --ctp-overlay0: @overlay0;
+    --ctp-surface2: @surface2;
+    --ctp-surface1: @surface1;
+    --ctp-surface0: @surface0;
+    --ctp-base: @base;
+    --ctp-mantle: @mantle;
+    --ctp-crust: @crust;
+    --ctp-accent: @accent;
+  }
+
+  .rgbify(@color) {
+    @rgb: red(@color), green(@color), blue(@color);
+  }
+
+  .hslify(@color) {
+    @raw: e(
+      %("%s, %s%, %s%", hue(@color), saturation(@color), lightness(@color))
+    );
   }
 }
